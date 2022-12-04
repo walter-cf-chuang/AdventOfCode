@@ -96,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D15188C9293C458B0017200E /* Main */,
+				D15188CA293C46AE0017200E /* Input */,
 				D15188C8293C45790017200E /* UI */,
 				D151889D293C45390017200E /* AdventOfCodeApp.swift */,
 				D15188A1293C453B0017200E /* Assets.xcassets */,
@@ -143,6 +144,13 @@
 			children = (
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D15188CA293C46AE0017200E /* Input */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
