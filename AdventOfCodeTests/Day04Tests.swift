@@ -25,9 +25,9 @@ class Day04Tests: XCTestCase, DayTests {
 
     // Outputs
     let outputExpectedPart1ForTestString: String = "2"
-    let outputExpectedPart2ForTestString: String = ""
-    let outputExpectedPart1ForRealFile: String = ""
-    let outputExpectedPart2ForRealFile: String = ""
+    let outputExpectedPart2ForTestString: String = "4"
+    let outputExpectedPart1ForRealFile: String = "500"
+    let outputExpectedPart2ForRealFile: String = "815"
 
     // Test source
     let testInputSource = TestInputSource.all
