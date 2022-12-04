@@ -33,16 +33,16 @@ final class Day04: Day {
         return findDuplicatePairs(by: hasOverlap)
     }
 
-    private func findDuplicatePairs(by predicate: ([(lowerbound: Int, upperbound: Int)]) -> Bool) -> String {
+    private func findDuplicatePairs(by predicate: ([ClosedRange<Int>]) -> Bool) -> String {
         return inputString
             .split(separator: "\n") // ["2-4,6-8", "2-3,4-5", "5-7,7-9", ...]
-            .map({ $0.split(separator: ",").map({ $0.range }) }) // [["2-4", "6-8"], ["2-3", "4-5"], ["5-7", "7-9"], ...] -> [[(2, 4), (6, 8)], [(2, 3), (4, 5)], [(5, 7), (7, 9)], ...]
+            .map(parse) // [["2-4", "6-8"], ["2-3", "4-5"], ["5-7", "7-9"], ...] -> [[(2, 4), (6, 8)], [(2, 3), (4, 5)], [(5, 7), (7, 9)], ...]
             .filter(predicate)
             .count
             .description
     }
 
-    private func hasFullyContain(ranges: [(lowerbound: Int, upperbound: Int)]) -> Bool {
+    private func hasFullyContain(ranges: [ClosedRange<Int>]) -> Bool {
         /*
             [(2, 4), (6, 8)]
             -> false
@@ -51,11 +51,10 @@ final class Day04: Day {
             -> true
         */
 
-        return (ranges[0].upperbound >= ranges[1].upperbound && ranges[0].lowerbound <= ranges[1].lowerbound) ||
-               (ranges[1].upperbound >= ranges[0].upperbound && ranges[1].lowerbound <= ranges[0].lowerbound)
+        return ranges[0].contains(ranges[1]) || ranges[1].contains(ranges[0])
     }
 
-    private func hasOverlap(ranges: [(lowerbound: Int, upperbound: Int)]) -> Bool {
+    private func hasOverlap(ranges: [ClosedRange<Int>]) -> Bool {
         /*
             [(2, 4), (6, 8)]
             -> false
@@ -64,15 +63,32 @@ final class Day04: Day {
             -> true
         */
 
-        return ranges[0].upperbound >= ranges[1].lowerbound && ranges[1].upperbound >= ranges[0].lowerbound
+        return ranges[0].overlaps(ranges[1])
+    }
+
+    private func parse(line: Substring) -> [ClosedRange<Int>] {
+        // "2-4,6-8"
+        // -> ["2-4", "6-8"]
+        // -> [[2, 4], [6, 8]]
+        // -> [2...4, 6...8]
+//        return str
+//            .split(separator: ",") // ["2-4", "6-8"]
+//            .map({
+//                $0 // "2-4"
+//                    .split(separator: "-") // ["2", "4"]
+//                    .map({ Int($0)! }) // [2, 4]
+//            }) // [[2, 4], [6, 8]]
+//            .map({ $0[0]...$0[1] })
+        let numbers = line.split(whereSeparator: { !$0.isNumber }).map({ Int($0)! }) // "2-4,6-8" -> [2, 4, 6, 8]
+        return [numbers[0]...numbers[1], numbers[2]...numbers[3]]
     }
 }
 
-private extension Substring {
+private extension ClosedRange {
 
-    var range: (lowerbound: Int, upperbound: Int) {
-        // 2-4 -> 2, 4
-        let nums = split(separator: "-").map({ Int($0)! })
-        return (nums[0], nums[1])
+    func contains(_ other: ClosedRange) -> Bool {
+//        return (upperBound >= other.upperBound && lowerBound <= other.lowerBound) ||
+//               (other.upperBound >= upperBound && other.lowerBound <= lowerBound)
+        return other.clamped(to: self) == other
     }
 }
