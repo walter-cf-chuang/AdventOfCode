@@ -95,8 +95,9 @@
 		D151889C293C45390017200E /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				D15188C9293C458B0017200E /* Main */,
+				D15188C8293C45790017200E /* UI */,
 				D151889D293C45390017200E /* AdventOfCodeApp.swift */,
-				D151889F293C45390017200E /* ContentView.swift */,
 				D15188A1293C453B0017200E /* Assets.xcassets */,
 				D15188A6293C453B0017200E /* AdventOfCode.entitlements */,
 				D15188A3293C453B0017200E /* Preview Content */,
@@ -127,6 +128,21 @@
 				D15188BB293C453B0017200E /* AdventOfCodeUITestsLaunchTests.swift */,
 			);
 			path = AdventOfCodeUITests;
+			sourceTree = "<group>";
+		};
+		D15188C8293C45790017200E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D151889F293C45390017200E /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D15188C9293C458B0017200E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
