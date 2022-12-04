@@ -7,45 +7,6 @@
 
 import Foundation
 
-enum InputSource {
-    case string(String)
-    case file(String)
-
-    var inputString: String {
-        switch self {
-        case .string(let string):
-            return string
-        case .file(let filename):
-            let fileExtension = "txt"
-            let fileURL = Bundle.main.url(forResource: filename, withExtension: fileExtension)
-            guard let fileURL = fileURL else {
-                assertionFailure("Input file not found for \(filename).\(fileExtension)")
-                return ""
-            }
-
-            do {
-                var content = try String(contentsOf: fileURL, encoding: String.Encoding.utf8)
-
-                if content.last == "\n" {
-                    content.removeLast()
-                }
-
-                return content
-            } catch {
-                assertionFailure("Cannot convert data in file to String.")
-            }
-
-            return ""
-        }
-    }
-}
-
-protocol Day {
-    init(inputSource: InputSource)
-    func part1() -> String
-    func part2() -> String
-}
-
 final class Day02: Day {
 
     private let inputString: String

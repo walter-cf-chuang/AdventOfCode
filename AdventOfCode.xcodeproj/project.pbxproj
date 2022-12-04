@@ -20,6 +20,8 @@
 		D15188D2293C4B200017200E /* Day02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188D1293C4B200017200E /* Day02.swift */; };
 		D15188D4293C4C650017200E /* Day02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188D3293C4C650017200E /* Day02Tests.swift */; };
 		D15188D6293C4CC10017200E /* input_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = D15188D5293C4CC10017200E /* input_02.txt */; };
+		D15188D8293C56440017200E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188D7293C56440017200E /* Day.swift */; };
+		D15188DA293C56620017200E /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188D9293C56620017200E /* InputSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		D15188D1293C4B200017200E /* Day02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day02.swift; sourceTree = "<group>"; };
 		D15188D3293C4C650017200E /* Day02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day02Tests.swift; sourceTree = "<group>"; };
 		D15188D5293C4CC10017200E /* input_02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_02.txt; sourceTree = "<group>"; };
+		D15188D7293C56440017200E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D15188D9293C56620017200E /* InputSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		D15188C9293C458B0017200E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D15188D7293C56440017200E /* Day.swift */,
 				D15188CB293C46D80017200E /* Day01.swift */,
 				D15188D1293C4B200017200E /* Day02.swift */,
 			);
@@ -165,6 +170,7 @@
 		D15188CA293C46AE0017200E /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				D15188D9293C56620017200E /* InputSource.swift */,
 				D15188CD293C48DA0017200E /* input_01.txt */,
 				D15188D5293C4CC10017200E /* input_02.txt */,
 			);
@@ -304,8 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D15188A0293C45390017200E /* ContentView.swift in Sources */,
+				D15188DA293C56620017200E /* InputSource.swift in Sources */,
 				D151889E293C45390017200E /* AdventOfCodeApp.swift in Sources */,
 				D15188D2293C4B200017200E /* Day02.swift in Sources */,
+				D15188D8293C56440017200E /* Day.swift in Sources */,
 				D15188CC293C46D80017200E /* Day01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
