@@ -14,4 +14,14 @@ struct AdventOfCodeApp: App {
             ContentView()
         }
     }
+
+    init() {
+        getOutputs()
+    }
+
+    private func getOutputs() {
+        let day = Day01()
+        print("Day01 - 1 = \(day.part1())")
+        print("Day01 - 2 = \(day.part2())")
+    }
 }
