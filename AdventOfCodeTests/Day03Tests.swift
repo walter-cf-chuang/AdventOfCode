@@ -10,17 +10,6 @@ import XCTest
 
 class Day03Tests: XCTestCase {
 
-    enum TestInputSource {
-        case string
-        case file
-        case all
-    }
-
-    enum TestPart {
-        case part1
-        case part2
-    }
-
     private enum Input {
         static let testString =
 """

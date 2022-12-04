@@ -25,6 +25,7 @@
 		D15188DC293C57500017200E /* Day03.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188DB293C57500017200E /* Day03.swift */; };
 		D15188DE293C57EE0017200E /* Day03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15188DD293C57EE0017200E /* Day03Tests.swift */; };
 		D15188E0293C58C10017200E /* input_03.txt in Resources */ = {isa = PBXBuildFile; fileRef = D15188DF293C58C10017200E /* input_03.txt */; };
+		D1743CEC293C59F1003AE183 /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1743CEB293C59F1003AE183 /* TestConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D15188DB293C57500017200E /* Day03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03.swift; sourceTree = "<group>"; };
 		D15188DD293C57EE0017200E /* Day03Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03Tests.swift; sourceTree = "<group>"; };
 		D15188DF293C58C10017200E /* input_03.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_03.txt; sourceTree = "<group>"; };
+		D1743CEB293C59F1003AE183 /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D15188AF293C453B0017200E /* AdventOfCodeTests.swift */,
+				D1743CEB293C59F1003AE183 /* TestConfiguration.swift */,
 				D15188CF293C49540017200E /* Day01Tests.swift */,
 				D15188D3293C4C650017200E /* Day02Tests.swift */,
 				D15188DD293C57EE0017200E /* Day03Tests.swift */,
@@ -335,6 +338,7 @@
 			files = (
 				D15188B0293C453B0017200E /* AdventOfCodeTests.swift in Sources */,
 				D15188D4293C4C650017200E /* Day02Tests.swift in Sources */,
+				D1743CEC293C59F1003AE183 /* TestConfiguration.swift in Sources */,
 				D15188D0293C49540017200E /* Day01Tests.swift in Sources */,
 				D15188DE293C57EE0017200E /* Day03Tests.swift in Sources */,
 			);
