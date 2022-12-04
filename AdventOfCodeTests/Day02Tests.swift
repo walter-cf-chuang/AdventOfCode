@@ -8,33 +8,28 @@
 import XCTest
 @testable import AdventOfCode
 
-class Day02Tests: XCTestCase {
+class Day02Tests: XCTestCase, DayTests {
 
-    private enum Input {
-        static let testClass: Day.Type = Day02.self
-        static let testString = "C Z\nC Y\nA X\nC X"
-        static let realFilename = "input_02"
-    }
+    // Inputs
+    let inputTestClass: Day.Type = Day02.self
+    let inputTestString: String = "C Z\nC Y\nA X\nC X"
+    let inputRealFilename: String = "input_02"
 
-    private enum Output {
-        static let expectedPart1ForTestString = "19"
-        static let expectedPart2ForTestString = "18"
-        static let expectedPart1ForRealFile = "13682"
-        static let expectedPart2ForRealFile = "12881"
-    }
+    // Outputs
+    let outputExpectedPart1ForTestString: String = "19"
+    let outputExpectedPart2ForTestString: String = "18"
+    let outputExpectedPart1ForRealFile: String = "13682"
+    let outputExpectedPart2ForRealFile: String = "12881"
 
-    private enum Log {
-        static let sutName = String(describing: Day02.self)
-    }
-
-    private let testInputSource = TestInputSource.all
+    // Test source
+    let testInputSource = TestInputSource.all
 
     func testPart1() {
         let testPart = TestPart.part1
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
+            printTestInfo(testClass: inputTestClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part1(), expectedOutput)
         }
     }
@@ -44,43 +39,8 @@ class Day02Tests: XCTestCase {
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
+            printTestInfo(testClass: inputTestClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part2(), expectedOutput)
-        }
-    }
-
-    private func makeSUT(testPart: TestPart) -> [(sut: Day, inputSource: String, expectedOutput: String)] {
-
-        let expectedOutputForTestString: String = {
-            switch testPart {
-            case .part1:
-                return Output.expectedPart1ForTestString
-            case .part2:
-                return Output.expectedPart2ForTestString
-            }
-        }()
-
-        let expectedOutputForRealFile: String = {
-            switch testPart {
-            case .part1:
-                return Output.expectedPart1ForRealFile
-            case .part2:
-                return Output.expectedPart2ForRealFile
-            }
-        }()
-
-        switch testInputSource {
-        case .string:
-            let inputSource = InputSource.string(Input.testString)
-            return [(Day02(inputSource: inputSource), "\(inputSource)", expectedOutputForTestString)]
-        case .file:
-            let inputSource = InputSource.file(Input.realFilename)
-            return [(Day02(inputSource: inputSource), "\(inputSource)", expectedOutputForRealFile)]
-        case .all:
-            let inputSourceTestString = InputSource.string(Input.testString)
-            let inputSourceRealFile = InputSource.file(Input.realFilename)
-            return [(Day02(inputSource: inputSourceTestString), "\(inputSourceTestString)", expectedOutputForTestString),
-                    (Day02(inputSource: inputSourceRealFile), "\(inputSourceRealFile)", expectedOutputForRealFile)]
         }
     }
 }
