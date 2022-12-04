@@ -27,6 +27,9 @@
 		D15188E0293C58C10017200E /* input_03.txt in Resources */ = {isa = PBXBuildFile; fileRef = D15188DF293C58C10017200E /* input_03.txt */; };
 		D1743CEC293C59F1003AE183 /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1743CEB293C59F1003AE183 /* TestConfiguration.swift */; };
 		D1743CEE293C5BC8003AE183 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1743CED293C5BC8003AE183 /* TestUtils.swift */; };
+		D1743CF0293CC230003AE183 /* Day04.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1743CEF293CC230003AE183 /* Day04.swift */; };
+		D1743CF2293CC285003AE183 /* input_04.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1743CF1293CC285003AE183 /* input_04.txt */; };
+		D1743CF4293CC2D8003AE183 /* Day04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1743CF3293CC2D8003AE183 /* Day04Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		D15188DF293C58C10017200E /* input_03.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input_03.txt; sourceTree = "<group>"; };
 		D1743CEB293C59F1003AE183 /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 		D1743CED293C5BC8003AE183 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		D1743CEF293CC230003AE183 /* Day04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day04.swift; sourceTree = "<group>"; };
+		D1743CF1293CC285003AE183 /* input_04.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input_04.txt; sourceTree = "<group>"; };
+		D1743CF3293CC2D8003AE183 /* Day04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day04Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 				D15188CF293C49540017200E /* Day01Tests.swift */,
 				D15188D3293C4C650017200E /* Day02Tests.swift */,
 				D15188DD293C57EE0017200E /* Day03Tests.swift */,
+				D1743CF3293CC2D8003AE183 /* Day04Tests.swift */,
 			);
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
@@ -177,6 +184,7 @@
 				D15188CB293C46D80017200E /* Day01.swift */,
 				D15188D1293C4B200017200E /* Day02.swift */,
 				D15188DB293C57500017200E /* Day03.swift */,
+				D1743CEF293CC230003AE183 /* Day04.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 				D15188CD293C48DA0017200E /* input_01.txt */,
 				D15188D5293C4CC10017200E /* input_02.txt */,
 				D15188DF293C58C10017200E /* input_03.txt */,
+				D1743CF1293CC285003AE183 /* input_04.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 				D15188CE293C48DA0017200E /* input_01.txt in Resources */,
 				D15188A5293C453B0017200E /* Preview Assets.xcassets in Resources */,
 				D15188E0293C58C10017200E /* input_03.txt in Resources */,
+				D1743CF2293CC285003AE183 /* input_04.txt in Resources */,
 				D15188A2293C453B0017200E /* Assets.xcassets in Resources */,
 				D15188D6293C4CC10017200E /* input_02.txt in Resources */,
 			);
@@ -325,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1743CF0293CC230003AE183 /* Day04.swift in Sources */,
 				D15188A0293C45390017200E /* ContentView.swift in Sources */,
 				D15188DA293C56620017200E /* InputSource.swift in Sources */,
 				D151889E293C45390017200E /* AdventOfCodeApp.swift in Sources */,
@@ -339,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1743CF4293CC2D8003AE183 /* Day04Tests.swift in Sources */,
 				D15188B0293C453B0017200E /* AdventOfCodeTests.swift in Sources */,
 				D1743CEE293C5BC8003AE183 /* TestUtils.swift in Sources */,
 				D15188D4293C4C650017200E /* Day02Tests.swift in Sources */,
