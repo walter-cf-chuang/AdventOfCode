@@ -37,9 +37,8 @@ final class Day04: Day {
         return inputString
             .split(separator: "\n") // ["2-4,6-8", "2-3,4-5", "5-7,7-9", ...]
             .map({ $0.split(separator: ",").map({ $0.range }) }) // [["2-4", "6-8"], ["2-3", "4-5"], ["5-7", "7-9"], ...] -> [[(2, 4), (6, 8)], [(2, 3), (4, 5)], [(5, 7), (7, 9)], ...]
-            .map({ predicate($0) })
-            .map({ $0 ? 1 : 0 })
-            .reduce(0, +)
+            .filter(predicate)
+            .count
             .description
     }
 
