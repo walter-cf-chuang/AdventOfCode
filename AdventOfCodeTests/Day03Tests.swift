@@ -11,6 +11,7 @@ import XCTest
 class Day03Tests: XCTestCase {
 
     private enum Input {
+        static let testClass: Day.Type = Day03.self
         static let testString =
 """
 vJrwpWtwJgWrhcsFMMfFFhFp
@@ -30,10 +31,6 @@ CrZsJsPPZsGzwwsLwLmpwMDw
         static let expectedPart2ForRealFile = "2569"
     }
 
-    private enum Log {
-        static let sutName = String(describing: Day03.self)
-    }
-
     private let testInputSource = TestInputSource.all
 
     func testPart1() {
@@ -41,7 +38,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            print("\tRunning \(Log.sutName).\(testPart)() with inputSource = \(inputSource), expectedOutput = \(expectedOutput)")
+            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part1(), expectedOutput)
         }
     }
@@ -51,7 +48,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            print("\tRunning \(Log.sutName).\(testPart)() with inputSource = \(inputSource), expectedOutput = \(expectedOutput)")
+            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part2(), expectedOutput)
         }
     }
@@ -79,15 +76,15 @@ CrZsJsPPZsGzwwsLwLmpwMDw
         switch testInputSource {
         case .string:
             let inputSource = InputSource.string(Input.testString)
-            return [(Day03(inputSource: inputSource), "\(inputSource)", expectedOutputForTestString)]
+            return [(Input.testClass.init(inputSource: inputSource), "\(inputSource)", expectedOutputForTestString)]
         case .file:
             let inputSource = InputSource.file(Input.realFilename)
-            return [(Day03(inputSource: inputSource), "\(inputSource)", expectedOutputForRealFile)]
+            return [(Input.testClass.init(inputSource: inputSource), "\(inputSource)", expectedOutputForRealFile)]
         case .all:
             let inputSourceTestString = InputSource.string(Input.testString)
             let inputSourceRealFile = InputSource.file(Input.realFilename)
-            return [(Day03(inputSource: inputSourceTestString), "\(inputSourceTestString)", expectedOutputForTestString),
-                    (Day03(inputSource: inputSourceRealFile), "\(inputSourceRealFile)", expectedOutputForRealFile)]
+            return [(Input.testClass.init(inputSource: inputSourceTestString), "\(inputSourceTestString)", expectedOutputForTestString),
+                    (Input.testClass.init(inputSource: inputSourceRealFile), "\(inputSourceRealFile)", expectedOutputForRealFile)]
         }
     }
 }

@@ -11,6 +11,7 @@ import XCTest
 class Day02Tests: XCTestCase {
 
     private enum Input {
+        static let testClass: Day.Type = Day02.self
         static let testString = "C Z\nC Y\nA X\nC X"
         static let realFilename = "input_02"
     }
@@ -33,7 +34,7 @@ class Day02Tests: XCTestCase {
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            print("\tRunning \(Log.sutName).\(testPart)() with inputSource = \(inputSource), expectedOutput = \(expectedOutput)")
+            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part1(), expectedOutput)
         }
     }
@@ -43,7 +44,7 @@ class Day02Tests: XCTestCase {
         let sutSuites = makeSUT(testPart: testPart)
 
         for (sut, inputSource, expectedOutput) in sutSuites {
-            print("\tRunning \(Log.sutName).\(testPart)() with inputSource = \(inputSource), expectedOutput = \(expectedOutput)")
+            printTestInfo(testClass: Input.testClass, testPart: testPart, inputSource: inputSource, expectedOutput: expectedOutput)
             XCTAssertEqual(sut.part2(), expectedOutput)
         }
     }
