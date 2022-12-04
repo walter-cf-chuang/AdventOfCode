@@ -33,38 +33,37 @@ final class Day04: Day {
         return findDuplicatePairs(by: hasOverlap)
     }
 
-    private func findDuplicatePairs(by predicate: (Substring) -> Bool) -> String {
+    private func findDuplicatePairs(by predicate: ([(lowerbound: Int, upperbound: Int)]) -> Bool) -> String {
         return inputString
             .split(separator: "\n") // ["2-4,6-8", "2-3,4-5", "5-7,7-9", ...]
+            .map({ $0.split(separator: ",").map({ $0.range }) }) // [["2-4", "6-8"], ["2-3", "4-5"], ["5-7", "7-9"], ...] -> [[(2, 4), (6, 8)], [(2, 3), (4, 5)], [(5, 7), (7, 9)], ...]
             .map({ predicate($0) })
             .map({ $0 ? 1 : 0 })
             .reduce(0, +)
             .description
     }
 
-    private func hasFullyContain(line: Substring) -> Bool {
+    private func hasFullyContain(ranges: [(lowerbound: Int, upperbound: Int)]) -> Bool {
         /*
-            "2-4,6-8"
-            -> ["2-4", "6-8"]
-            -> [(2, 4), (6, 8)]
+            [(2, 4), (6, 8)]
             -> false
+
+            [(2, 8), (3, 7)]
+            -> true
         */
-        let ranges = line.split(separator: ",")
-            .map({ $0.range })
 
         return (ranges[0].upperbound >= ranges[1].upperbound && ranges[0].lowerbound <= ranges[1].lowerbound) ||
                (ranges[1].upperbound >= ranges[0].upperbound && ranges[1].lowerbound <= ranges[0].lowerbound)
     }
 
-    private func hasOverlap(line: Substring) -> Bool {
+    private func hasOverlap(ranges: [(lowerbound: Int, upperbound: Int)]) -> Bool {
         /*
-            "2-4,6-8"
-            -> ["2-4", "6-8"]
-            -> [(2, 4), (6, 8)]
+            [(2, 4), (6, 8)]
             -> false
+
+            [(2, 6), (4, 8)]
+            -> true
         */
-        let ranges = line.split(separator: ",")
-            .map({ $0.range })
 
         return ranges[0].upperbound >= ranges[1].lowerbound && ranges[1].upperbound >= ranges[0].lowerbound
     }
